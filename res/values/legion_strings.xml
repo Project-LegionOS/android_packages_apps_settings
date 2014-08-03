@@ -228,4 +228,7 @@
     <string name="face_unlock_method_swipe">When swiping on lock screen</string>
     <string name="skip_biometric_auth_confirmation_title">Skip manual confirmation</string>
 
+    <!-- PIN scramble -->
+    <string name="unlock_scramble_pin_layout_title">Scramble layout</string>
+    <string name="unlock_scramble_pin_layout_summary">Scramble PIN layout when unlocking device</string>
 </resources>
