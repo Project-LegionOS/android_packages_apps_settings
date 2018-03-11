@@ -172,6 +172,13 @@
             android:key="tap_to_wake"
             android:title="@string/tap_to_wake"
             android:summary="@string/tap_to_wake_summary"/>
+        
+        <com.legion.support.preferences.SystemSettingSwitchPreference
+            android:key="feature_touch_hovering"
+            android:title="@string/touchscreen_hovering_title"
+            android:summary="@string/touchscreen_hovering_summary"
+            android:defaultValue="false"
+            settings:controller="com.android.settings.custom.touch.TouchHoveringSettingsPreferenceController" />
 
         <com.legion.support.preferences.SystemSettingSwitchPreference
             android:key="double_tap_sleep_gesture"
