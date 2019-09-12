@@ -42,6 +42,7 @@ public class LegionVersionDetailPreferenceController extends BasePreferenceContr
     private static final int ACTIVITY_TRIGGER_COUNT = 3;
 
     private static final String KEY_LEGION_VERSION_PROP = "ro.modversion";
+    private static final String KEY_LEGION_RELEASETYPE_PROP = "ro.legion.releasetype";
 
     private final UserManager mUserManager;
     private final long[] mHits = new long[ACTIVITY_TRIGGER_COUNT];
@@ -63,8 +64,9 @@ public class LegionVersionDetailPreferenceController extends BasePreferenceContr
     @Override
     public CharSequence getSummary() {
 	String[] legionVer = SystemProperties.get(KEY_LEGION_VERSION_PROP).split("v");
-	if (!legionVer[1].isEmpty())
-	    return legionVer[1];
+	String legionReleasetype =  SystemProperties.get(KEY_LEGION_RELEASETYPE_PROP);
+	if (!legionVer[1].isEmpty() && !legionReleasetype.isEmpty())
+	    return legionVer[1] + " | " + legionReleasetype;
 	else
             return mContext.getString(R.string.unknown);
     }
