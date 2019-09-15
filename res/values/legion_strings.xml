@@ -239,4 +239,6 @@
     <!-- Deep Sleep percentage in device info -->
     <string name="status_sleep_time">Deep sleep</string>
 
+    <!-- Battery temperature -->
+    <string name="battery_temperature">Battery temperature</string>
 </resources>
