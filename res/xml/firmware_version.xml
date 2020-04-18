@@ -38,6 +38,16 @@
         settings:layout="@layout/legion_dashboard_preference_single"
         settings:controller="com.android.settings.deviceinfo.firmwareversion.LegionVersionDetailPreferenceController"/>
 
+    <!-- Build maintainer -->
+    <Preference
+        android:key="os_build_maintainer"
+        android:icon="@drawable/ic_maint"
+        android:title="@string/build_maintainer"
+        android:summary="@string/summary_placeholder"
+        settings:enableCopying="true"
+        settings:layout="@layout/legion_dashboard_preference_top"
+        settings:controller="com.android.settings.deviceinfo.firmwareversion.LegionBuildMaintainerPreferenceController"/>
+
     <!-- Device name -->
     <Preference
         android:key="about_device_name"
@@ -45,7 +55,7 @@
         android:title="@string/about_device_name"
         android:summary="@string/summary_placeholder"
         settings:enableCopying="true"
-        settings:layout="@layout/legion_dashboard_preference_top"
+        settings:layout="@layout/legion_dashboard_preference_middle"
         settings:controller="com.android.settings.deviceinfo.firmwareversion.AboutDeviceNamePreferenceController"/>
 
     <!-- Android version -->
