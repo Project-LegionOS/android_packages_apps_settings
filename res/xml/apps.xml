@@ -72,6 +72,12 @@
             android:targetClass="ink.kscope.parallelspace.MainActivity" />
     </Preference>
 
+    <com.legion.support.preferences.SecureSettingSwitchPreference
+        android:key="games_device_spoof"
+        android:title="@string/games_device_spoof_title"
+        android:summary="@string/games_device_spoof_summary"
+        android:defaultValue="false"/>
+
     <PreferenceCategory
         android:key="dashboard_tile_placeholder"
         android:order="10"/>

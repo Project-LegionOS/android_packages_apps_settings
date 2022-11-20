@@ -302,4 +302,9 @@
     <string name="build_maintainer">Build maintainer</string>
     <string name="build_maintainer_summary" translatable="false">Unknown</string>
     <string name="build_maintainer_telegram" translatable="false">https://t.me/LegionOS</string>
+
+    <!-- GamesPropsUtils -->
+    <string name="games_device_spoof_title">Unlock higher FPS in games</string>
+    <string name="games_device_spoof_summary">Spoof device as a high-end model in certain games, to unlock higher FPS</string>
+
 </resources>
