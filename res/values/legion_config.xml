@@ -45,4 +45,10 @@
         <item>com.android.localtransport/.LocalTransport</item>
     </string-array>
 
+    <!-- Battery Health -->
+    <bool name="config_supportBatteryHealth">false</bool>
+    <string name="config_batCurCap"></string>
+    <string name="config_batDesCap"></string>
+    <string name="config_batChargeCycle"></string>
+
 </resources>
