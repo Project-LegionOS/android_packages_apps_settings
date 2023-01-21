@@ -23,9 +23,10 @@
 
     <com.android.settingslib.widget.LayoutPreference
         android:key="my_device_info_header"
-        android:order="-1"
+        android:order="0"
         android:layout="@layout/settings_entity_header"
-        android:selectable="false"/>
+        android:selectable="false"
+        settings:isPreferenceVisible="false"/>
 
     <PreferenceCategory
         android:key="basic_info_category"
@@ -51,7 +52,7 @@
             settings:controller="com.android.settings.deviceinfo.BrandedAccountPreferenceController"/>
 
         <!-- Phone number -->
-        <!--com.android.settings.deviceinfo.PhoneNumberSummaryPreference
+        <com.android.settings.deviceinfo.PhoneNumberSummaryPreference
             android:key="phone_number"
             android:order="3"
             android:title="@string/status_number"
@@ -59,7 +60,7 @@
             android:selectable="false"
             settings:isPreferenceVisible="@bool/config_show_sim_info"
             settings:controller="com.android.settings.deviceinfo.PhoneNumberPreferenceController"
-            settings:enableCopying="true"/ -->
+            settings:enableCopying="true"/>
     </PreferenceCategory>
 
     <PreferenceCategory
