@@ -65,6 +65,7 @@ public class TopLevelSettings extends DashboardFragment implements SplitLayoutLi
     private int mPaddingHorizontal;
     private boolean mScrollNeeded = true;
     private boolean mFirstStarted = true;
+    private boolean gAppsExists;
 
     public TopLevelSettings() {
         final Bundle args = new Bundle();
@@ -195,6 +196,48 @@ public class TopLevelSettings extends DashboardFragment implements SplitLayoutLi
                 icon.setTint(tintColor);
             }
         });
+        onSetPrefCard();
+    }
+
+    private void onSetPrefCard() {
+        final PreferenceScreen screen = getPreferenceScreen();
+        final int count = screen.getPreferenceCount();
+        for (int i = 0; i < count; i++) {
+            final Preference preference = screen.getPreference(i);
+
+            String key = preference.getKey();
+            if (key.equals("top_level_network")){
+                preference.setLayoutResource(R.layout.legion_dashboard_preference_top);
+            } else if (key.equals("top_level_battery")
+            	|| key.equals("top_level_display")
+            	|| key.equals("top_level_security")
+            	|| key.equals("top_level_privacy")
+                || key.equals("top_level_connected_devices")
+                || key.equals("top_level_wallpaper")
+            	|| key.equals("top_level_storage")
+            	|| key.equals("top_level_apps")
+                || key.equals("top_level_sound")
+                || key.equals("top_level_safety_center")
+                || key.equals("top_level_location")
+            	|| key.equals("top_level_accessibility")
+            	|| key.equals("top_level_emergency")
+            	|| key.equals("top_level_accounts")
+                || key.equals("top_level_system")
+                || key.equals("dashboard_tile_pref_com.google.android.apps.wellbeing.settings.TopLevelSettingsActivity")
+            	|| key.equals("dashboard_tile_pref_com.google.android.apps.wellbeing.home.TopLevelSettingsActivity")
+            	|| key.equals("top_level_wellbeing")
+            	|| key.equals("top_level_notifications")){
+                preference.setLayoutResource(R.layout.legion_dashboard_preference_middle);
+            } else if (key.equals("dashboard_tile_pref_com.google.android.gms.app.settings.GoogleSettingsIALink")
+            	|| key.equals("top_level_google")){
+                preference.setLayoutResource(R.layout.legion_dashboard_preference_middle);
+                gAppsExists = true;
+            } else if (key.equals("top_level_accounts") && gAppsExists){
+                preference.setLayoutResource(R.layout.legion_dashboard_preference_middle);
+            } else {
+                preference.setLayoutResource(R.layout.legion_dashboard_preference_bottom);
+            }
+       }
     }
 
     @Override
