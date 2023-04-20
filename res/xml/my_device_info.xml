@@ -80,14 +80,14 @@
         android:title="@string/status_up_time"
         settings:layout="@layout/legion_dashboard_preference_top" />
 
+        <!-- Device deep sleep time -->
         <Preference
-            android:title="@string/radio_info_title"
-            android:key="radio_info_settings"
-            settings:layout="@layout/legion_dashboard_preference_middle">
-            <intent android:action="android.intent.action.MAIN"
-                    android:targetPackage="com.android.phone"
-                    android:targetClass="com.android.phone.settings.RadioInfo" />
-         </Preference>
+            android:key="sleep_time"
+	    android:icon="@drawable/ic_sleep"
+            settings:layout="@layout/legion_dashboard_preference_middle"
+            android:title="@string/status_sleep_time"
+            android:summary="@string/summary_placeholder"
+            android:selectable="false"/>
 
     <!-- Legal information -->
     <Preference
@@ -130,14 +130,6 @@
         android:title="@string/device_feedback"
         settings:layout="@layout/legion_dashboard_preference_middle"
         settings:keywords="@string/keywords_device_feedback" />
-
-        <!-- Device deep sleep time -->
-        <Preference
-            android:key="sleep_time"
-            settings:layout="@layout/legion_dashboard_preference_middle"
-            android:title="@string/status_sleep_time"
-            android:summary="@string/summary_placeholder"
-            android:selectable="false"/>
 
     <!-- Device FCC equipment id -->
     <Preference
