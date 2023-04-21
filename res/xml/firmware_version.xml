@@ -80,7 +80,6 @@
 	android:icon="@drawable/ic_selinux"
         android:title="@string/selinux_status"
         android:summary="@string/summary_placeholder"
-        android:selectable="false"
         settings:enableCopying="false"
         settings:layout="@layout/legion_dashboard_preference_middle"
         settings:controller="com.android.settings.deviceinfo.firmwareversion.SelinuxStatusPreferenceController"/>
@@ -100,7 +99,6 @@
         android:icon="@drawable/ic_andbas"
         android:title="@string/baseband_version"
         android:summary="@string/summary_placeholder"
-        android:selectable="false"
         settings:enableCopying="true"
         settings:layout="@layout/legion_dashboard_preference_middle"
         settings:controller="com.android.settings.deviceinfo.firmwareversion.BasebandVersionPreferenceController"/>
@@ -111,7 +109,6 @@
         android:icon="@drawable/ic_kernel"
         android:title="@string/kernel_version"
         android:summary="@string/summary_placeholder"
-        android:selectable="false"
         settings:enableCopying="true"
         settings:layout="@layout/legion_dashboard_preference_bottom"
         settings:controller="com.android.settings.deviceinfo.firmwareversion.KernelVersionPreferenceController"/>

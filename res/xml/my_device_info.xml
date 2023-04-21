@@ -54,7 +54,6 @@
         android:icon="@drawable/ic_date"
         android:title="@string/build_date"
         android:summary="@string/summary_placeholder"
-        android:selectable="false"
         settings:enableCopying="true"
         settings:controller="com.android.settings.deviceinfo.firmwareversion.BuildDatePreferenceController"
         settings:layout="@layout/legion_dashboard_preference_middle" />
