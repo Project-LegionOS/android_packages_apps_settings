@@ -33,7 +33,7 @@ import android.service.notification.NotificationListenerService;
 import androidx.lifecycle.OnLifecycleEvent;
 
 import com.android.internal.config.sysui.SystemUiDeviceConfigFlags;
-	import com.android.settings.R;
+import com.android.settings.R;
 import com.android.settingslib.core.lifecycle.Lifecycle;
 
 import java.util.Set;
@@ -84,7 +84,6 @@ public class RingVolumePreferenceController extends
     public void onResume() {
         super.onResume();
         mReceiver.register(true);
-        updateEffectsSuppressor();
         readSeparateNotificationVolumeConfig();
         Binder.withCleanCallingIdentity(()
                 -> DeviceConfig.addOnPropertiesChangedListener(DeviceConfig.NAMESPACE_SYSTEMUI,
@@ -129,8 +128,9 @@ public class RingVolumePreferenceController extends
         return (hints & NotificationListenerService.HINT_HOST_DISABLE_CALL_EFFECTS) != 0
                 || (hints & NotificationListenerService.HINT_HOST_DISABLE_EFFECTS) != 0
                 || ((hints & NotificationListenerService.HINT_HOST_DISABLE_NOTIFICATION_EFFECTS)
-                != 0 && ringNotificationAliased);
+                != 0 && !notificationSeparated);
     }
+
 
     private final class H extends Handler {
         private static final int UPDATE_EFFECTS_SUPPRESSOR = 1;

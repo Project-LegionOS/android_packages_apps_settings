@@ -27,10 +27,10 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.media.AudioManager;
 import android.os.Vibrator;
+import android.provider.DeviceConfig;
 import android.service.notification.NotificationListenerService;
 import android.telephony.TelephonyManager;
 
-import com.android.settings.R;
 import com.android.internal.config.sysui.SystemUiDeviceConfigFlags;
 import com.android.settings.core.BasePreferenceController;
 import com.android.settings.testutils.shadow.ShadowDeviceConfig;
@@ -42,9 +42,11 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.robolectric.RobolectricTestRunner;
 import org.robolectric.RuntimeEnvironment;
+import org.robolectric.annotation.Config;
 import org.robolectric.shadows.ShadowApplication;
 
 @RunWith(RobolectricTestRunner.class)
+@Config(shadows = {ShadowDeviceConfig.class})
 public class RingVolumePreferenceControllerTest {
 
     @Mock
