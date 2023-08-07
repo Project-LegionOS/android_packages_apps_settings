@@ -81,6 +81,12 @@
         android:title="@string/battery_temperature"
         android:selectable="false" />
 
+    <com.legion.support.preferences.SystemSettingSwitchPreference
+        android:key="lockscreen_battery_info"
+        android:title="@string/lockscreen_battery_info_title"
+        android:summary="@string/lockscreen_battery_info_summary"
+        android:defaultValue="true" />
+
     <com.android.settings.fuelgauge.batteryusage.PowerGaugePreference
         android:key="designed_battery_capacity"
         android:title="@string/designed_battery_capacity"
